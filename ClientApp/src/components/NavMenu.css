@@ -13,7 +13,7 @@
 
 @media (min-width: 768px) {
     /* On large screens, convert the nav menu to a vertical sidebar */
-    .navbar {
+    /* .navbar {
         height: 100%;
         width: calc(25% - 20px);
     }
@@ -49,10 +49,9 @@
         border-radius: 4px;
     }
     .navbar a {
-        /* If a menu item's text is too long, truncate it */
         width: 100%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-    }
+    } */
 }
