@@ -1,0 +1,26 @@
+import React, { Component } from 'react';
+import './Portfolio.css';
+import { Title } from './Title';
+import { Bio } from './Bio';
+import { Skill } from './Skill';
+import { Resume } from './Resume';
+import { Project } from './Project';
+import { Contact } from './Contact';
+
+export class Portfolio extends Component {
+    displayName = Portfolio.name;
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div className="portfolio-font">
+                <Title />
+                <Bio />
+                <Skill />
+                <Resume />
+            </div>
+        );
+    }
+}
