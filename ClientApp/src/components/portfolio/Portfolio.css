@@ -3,14 +3,14 @@
     src: url(/ClientApp/public/fonts/Cinzel-Regular.otf);
 }
 
-.portfolioFont {
+.portfolio-font {
     font-family: 'Courier New', Courier, monospace;
     font-size: 2em;
 }
 
 .parallax { 
     /* The image used */
-    background-image: url("/ClientApp/public/img/portfolio/main_image.jpg");
+    background-image: url("../img/portfolio/main_image.jpg");
 
     /* Set a specific height */
     height: 900px; 
@@ -20,16 +20,17 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    width: 100%;
 }
 
-.globalPadding {
+.global-padding {
     padding: 50px 0px 50px 0px;
 }
-.globalMargin {
+.global-margin {
     margin-top: 100px;
 }
 
-.blackUnderline {
+.b-underline {
     box-sizing: border-box;
     border-bottom: 1px solid black;
     padding-bottom: 10px;
@@ -37,14 +38,14 @@
     margin-left: auto;
     margin-right: auto;
 }
-.whiteUnderline {
+.w-underline {
     box-sizing: border-box;
     border-bottom: 1px solid white;
     padding-bottom: 10px;
     width: 100px;
 }
 
-/* ****** NAVBAR BOOTSTRAP ********* */
+/* ****** NAVBAR ********* */
 .navbar {
     border: 1px solid white;
 }
@@ -54,27 +55,28 @@
 /* *********************** */
 
 /* ********* TITLE ********* */
-.titleSection {
+.title-section {
     padding-top: 250px;
 }
-.titleText {
-    color: white;
-    font-family: Cinzel-Regular;
+.title {
     font-size: 74px;
     font-weight: 600;
 }
-.title {
+.sub-title {
     font-size: 44px;
     font-weight: 600;
+}
+.title-color {
+    color: white;
 }
 /* ************************* */
 
 /* ********** BIO ********** */
-.bioSection {
+.bio-section {
     height: auto;
     background-color: lightgrey;
 }
-.bioPic {
+.bio-pic {
     border-radius: 50%;
     height: auto;
     display: block;
@@ -83,16 +85,16 @@
     width: 40%;
     margin-bottom: 50px;
 }
-.bioPadding {
+.bio-padding {
     padding: 0px 50px 0px 50px
 }
 /* ************************** */
 
 /* ********** SKILLS *********** */
-.skillSection {
+.skills-section {
     height: auto;
 }
-.skillIcon {
+.skill-icon {
     display: block;
     /* margin-top: 100px; */
     height: 150px;
@@ -105,7 +107,7 @@
 /* ***************************** */
 
 /* ************ RESUME ************* */
-.resumeSection {
+.resume-section {
     height: auto;
     background-color: lightgrey;
 }

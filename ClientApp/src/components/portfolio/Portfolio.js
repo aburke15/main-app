@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Grid, Col, Row } from 'react-bootstrap';
 import './Portfolio.css';
 
 export class Portfolio extends Component {
@@ -7,9 +8,11 @@ export class Portfolio extends Component {
         super(props);
     }
 
-    render () {
+    render() {
         return (
-            <h1>Hello World!</h1>
+            <div className="portfolio-font">
+                <Title />
+            </div>
         );
     }
 }
@@ -17,6 +20,17 @@ export class Portfolio extends Component {
 class Title extends Component {
     constructor(props) {
         super(props);
+    }
+
+    render() {
+        return (
+            <Grid className="title-section parallax">
+                <Grid bsClass="container">
+                    <h1 className="text-center title title-color">Andre Burke</h1>
+                    <h2 className="text-center sub-title title-color">Software Engineer</h2>
+                </Grid>
+            </Grid>
+        );
     }
 }
 
