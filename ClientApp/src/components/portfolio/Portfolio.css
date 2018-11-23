@@ -1,0 +1,111 @@
+@font-face {
+    font-family: Cinzel-Regular;
+    src: url(/ClientApp/public/fonts/Cinzel-Regular.otf);
+}
+
+.portfolioFont {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
+}
+
+.parallax { 
+    /* The image used */
+    background-image: url("/ClientApp/public/img/portfolio/main_image.jpg");
+
+    /* Set a specific height */
+    height: 900px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.globalPadding {
+    padding: 50px 0px 50px 0px;
+}
+.globalMargin {
+    margin-top: 100px;
+}
+
+.blackUnderline {
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.whiteUnderline {
+    box-sizing: border-box;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    width: 100px;
+}
+
+/* ****** NAVBAR BOOTSTRAP ********* */
+.navbar {
+    border: 1px solid white;
+}
+.navbar-brand {
+    font-size: 26px;
+}
+/* *********************** */
+
+/* ********* TITLE ********* */
+.titleSection {
+    padding-top: 250px;
+}
+.titleText {
+    color: white;
+    font-family: Cinzel-Regular;
+    font-size: 74px;
+    font-weight: 600;
+}
+.title {
+    font-size: 44px;
+    font-weight: 600;
+}
+/* ************************* */
+
+/* ********** BIO ********** */
+.bioSection {
+    height: auto;
+    background-color: lightgrey;
+}
+.bioPic {
+    border-radius: 50%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-bottom: 50px;
+}
+.bioPadding {
+    padding: 0px 50px 0px 50px
+}
+/* ************************** */
+
+/* ********** SKILLS *********** */
+.skillSection {
+    height: auto;
+}
+.skillIcon {
+    display: block;
+    /* margin-top: 100px; */
+    height: 150px;
+    width: auto;
+    text-align: center;
+    opacity: .85;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* ***************************** */
+
+/* ************ RESUME ************* */
+.resumeSection {
+    height: auto;
+    background-color: lightgrey;
+}
