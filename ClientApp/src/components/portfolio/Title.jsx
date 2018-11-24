@@ -10,8 +10,8 @@ export class Title extends Component {
         return (
             <section className="title-section parallax">
                 <Grid>
-                    <h1 className="text-center title title-color">Andre Burke</h1>
-                    <h2 className="text-center sub-title title-color">Software Engineer</h2>
+                    <h1 className="text-center title title-color-font">Andre Burke</h1>
+                    <h2 className="text-center sub-title title-color-font">Software Engineer</h2>
                 </Grid>
             </section>
         );

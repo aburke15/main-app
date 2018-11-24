@@ -1,11 +1,11 @@
 @font-face {
     font-family: Cinzel-Regular;
-    src: url(/ClientApp/public/fonts/Cinzel-Regular.otf);
+    src: url(../fonts/Cinzel-Regular.otf);
 }
 
 .portfolio-font {
     font-family: 'Courier New', Courier, monospace;
-    font-size: 2em;
+    font-size: 18px;
 }
 
 .parallax { 
@@ -66,8 +66,9 @@
     font-size: 44px;
     font-weight: 600;
 }
-.title-color {
+.title-color-font {
     color: white;
+    font-family: Cinzel-Regular;
 }
 /* ************************* */
 
@@ -96,13 +97,11 @@
 }
 .skill-icon {
     display: block;
-    /* margin-top: 100px; */
+    margin: 100px auto 0px auto;
     height: 150px;
     width: auto;
     text-align: center;
     opacity: .85;
-    margin-left: auto;
-    margin-right: auto;
 }
 /* ***************************** */
 
@@ -111,3 +110,20 @@
     height: auto;
     background-color: lightgrey;
 }
+/* ********************************* */
+
+/* *********** PROJECTS ************* */
+.projects-section {
+    height: auto;
+}
+
+/* ********************************** */
+
+/* ************* CONTACT ************ */
+.contact-section {
+    /* height: auto; */
+    height: 400px;
+    background-color: grey;
+}
+
+/* ********************************** */

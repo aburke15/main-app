@@ -20,6 +20,8 @@ export class Portfolio extends Component {
                 <Bio />
                 <Skill />
                 <Resume />
+                <Project />
+                <Contact />
             </div>
         );
     }
