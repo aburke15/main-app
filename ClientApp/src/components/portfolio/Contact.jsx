@@ -23,17 +23,17 @@ export class Contact extends Component {
                     <Row>
                         <Col md={4}>
                             <a href="https://www.linkedin.com/in/aburkex24" target="_blank">
-                                <img className="contact-icon" src="../img/portfolio/linkedin_icon.png" />
+                                <img className="contact-icon" src="../img/portfolio/linkedin.png" />
                             </a>
                         </Col>
                         <Col md={4}>
                             <a href="https://www.youtube.com/channel/UCczcmJfcsvhmW-65r1RuZ4w/featured?view_as=subscriber" target="_blank">
-                                <img className="contact-icon" src="../img/portfolio/youtube_icon.png" />
+                                <img className="contact-icon" src="../img/portfolio/youtube.png" />
                             </a>
                         </Col>
                         <Col md={4}>
                             <a href="https://github.com/aburkex24" target="_blank">
-                                <img className="contact-icon" src="../img/portfolio/github_icon.png" />
+                                <img className="contact-icon" src="../img/portfolio/github.png" />
                             </a>
                         </Col>
                     </Row>
