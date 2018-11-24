@@ -114,16 +114,34 @@
 
 /* *********** PROJECTS ************* */
 .projects-section {
-    height: auto;
+    /* height: auto; */
+    height: 400px;
 }
-
 /* ********************************** */
 
 /* ************* CONTACT ************ */
 .contact-section {
     /* height: auto; */
-    height: 400px;
+    height: 600px;
     background-color: grey;
 }
-
+.contact-email {
+    color: white;
+}
+.contact-phone {
+    color: white;
+}
+.contact-email:hover {
+    text-decoration: none;
+    color: black;
+}
+.contact-icon {
+    display: inline-block;
+    height: 150px;
+    width: auto;
+    margin: 0px auto 0px auto;
+}
+.contact-margin {
+    margin-bottom: 50px;
+}
 /* ********************************** */

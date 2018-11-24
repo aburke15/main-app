@@ -14,7 +14,7 @@ export class Skill extends Component {
                         <h2 className="text-center">Skills</h2>
                         <p className="b-underline"></p>
                     </Row>
-                    <Row className="">
+                    <Row>
                         <Col md={6}>
                             <img className="skill-icon" src="../img/portfolio/c_sharp.png" alt="C# programming" />
                             <h3 className="text-center">C#</h3>
@@ -24,7 +24,7 @@ export class Skill extends Component {
                             <h3 className="text-center">.NET Core</h3>
                         </Col>
                     </Row>
-                    <Row className="">
+                    <Row>
                         <Col md={6}>
                             <img className="skill-icon" src="../img/portfolio/sql_server.png" alt="SQL Server" />
                             <h3 className="text-center">MSSQL</h3>
@@ -34,7 +34,7 @@ export class Skill extends Component {
                             <h3 className="text-center">EF Core</h3>
                         </Col>
                     </Row>
-                    <Row className="">
+                    <Row>
                         <Col md={6}>
                             <img className="skill-icon" src="../img/portfolio/css.png" alt="CSS3" />
                             <h3 className="text-center">CSS3</h3>
@@ -44,7 +44,7 @@ export class Skill extends Component {
                             <h3 className="text-center">HTML5</h3>
                         </Col>
                     </Row>
-                    <Row className="">
+                    <Row>
                         <Col md={6}>
                             <img className="skill-icon" src="../img/portfolio/javascript.jpg" alt="JavaScript" />
                             <h3 className="text-center">JavaScript</h3>
