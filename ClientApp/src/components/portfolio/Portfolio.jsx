@@ -9,9 +9,6 @@ import { Contact } from './Contact';
 
 export class Portfolio extends Component {
     displayName = Portfolio.name;
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (

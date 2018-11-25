@@ -2,13 +2,10 @@ import React, { Component } from 'react';
 import { Grid, Col, Row } from 'react-bootstrap';
 
 export class Skill extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (
-            <section className="skills-section global-padding">
+            <section id="skills" className="skills-section global-padding">
                 <Grid>
                     <Row>
                         <h2 className="text-center">Skills</h2>

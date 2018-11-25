@@ -12,15 +12,35 @@ export class NavMenu extends Component {
       <Navbar inverse fixedTop fluid collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <Link to={'/'}>Andre Burke</Link>
+            <Link to={'#title'}>Andre Burke</Link>
           </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <LinkContainer to={'/portfolio'}>
+            <LinkContainer to={'#me'}>
               <NavItem>
-                <Glyphicon glyph='user' /> Portfolio
+                <Glyphicon glyph='user' /> Me
+              </NavItem>
+            </LinkContainer>
+            <LinkContainer to={'#skills'}>
+              <NavItem>
+                <Glyphicon glyph='tasks' /> Skills
+              </NavItem>
+            </LinkContainer>
+            <LinkContainer to={'#resume'}>
+              <NavItem>
+                <Glyphicon glyph='list' /> Resume
+              </NavItem>
+            </LinkContainer>
+            <LinkContainer to={'#projects'}>
+              <NavItem>
+                <Glyphicon glyph='list-alt' /> Projects
+              </NavItem>
+            </LinkContainer>
+            <LinkContainer to={'#contact'}>
+              <NavItem>
+                <Glyphicon glyph='earphone' /> Contact
               </NavItem>
             </LinkContainer>
           </Nav>

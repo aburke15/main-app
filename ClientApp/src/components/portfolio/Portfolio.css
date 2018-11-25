@@ -122,8 +122,11 @@
 /* ************* CONTACT ************ */
 .contact-section {
     /* height: auto; */
-    height: 600px;
+    height: 300px;
     background-color: grey;
+}
+.contact-top-row {
+    margin-top: 15px;
 }
 .contact-email {
     color: white;
@@ -131,17 +134,21 @@
 .contact-phone {
     color: white;
 }
-.contact-email:hover {
+.contact-email:hover,
+.contact-email:active,
+.contact-email:focus {
     text-decoration: none;
     color: black;
 }
 .contact-icon {
-    display: inline-block;
-    height: 150px;
+    height: 50px;
     width: auto;
-    margin: 0px auto 0px auto;
+}
+.contact-icon-space {
+    margin-left: 25px;
+    margin-right: 25px;
 }
 .contact-margin {
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 /* ********************************** */
