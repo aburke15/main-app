@@ -30,12 +30,12 @@ export class NavMenu extends Component {
             </LinkContainer>
             <LinkContainer to={'#resume'}>
               <NavItem>
-                <Glyphicon glyph='list' /> Resume
+                <Glyphicon glyph='list-alt' /> Resume
               </NavItem>
             </LinkContainer>
             <LinkContainer to={'#projects'}>
               <NavItem>
-                <Glyphicon glyph='list-alt' /> Projects
+                <Glyphicon glyph='list' /> Projects
               </NavItem>
             </LinkContainer>
             <LinkContainer to={'#contact'}>
