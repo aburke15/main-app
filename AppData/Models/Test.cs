@@ -2,14 +2,10 @@ using System;
 
 namespace AppData.Models
 {
-    public class Test
+    public class Test : Entity
     {
-        public Test() 
-            => CreatedOn = DateTime.Now;
-
-        public int ID { get; private set; }
-
-        public DateTime CreatedOn { get; private set; }
+        public Test()
+        { }
 
         public string Body { get; set; }
 
