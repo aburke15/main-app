@@ -17,7 +17,6 @@ namespace AppData.Implementations
             language varchar(25) NULL,
             name varchar(50) NOT NULL,
             PRIMARY KEY(ID));";
-
         private const string DROP_TABLE = "IF EXISTS DROP TABLE GithubRepo;";
 
         private readonly WebsitesContext Context;
