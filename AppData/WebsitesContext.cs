@@ -1,3 +1,4 @@
+using AppData.ModelConfigurations;
 using AppData.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,37 +12,12 @@ namespace AppData
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            // some enity type configuration
-
-            builder.Entity<Test>()
-                .Property(x => x.ID)
-                .ValueGeneratedOnAdd();
-
-            builder.Entity<Test>()
-                .HasKey(x => x.ID);
-
-            builder.Entity<Test>()
-                .Property(x => x.Body)
-                .HasColumnName("body")
-                .HasMaxLength(500)
-                .HasColumnType("varchar(500)")
-                .IsRequired();
-            
-            builder.Entity<Test>()
-                .Property(x => x.CreatedBy)
-                .HasColumnName("created_by")
-                .HasMaxLength(50)
-                .HasColumnType("varchar(50)")
-                .IsRequired();
-
-            builder.Entity<Test>()
-                .Property(x => x.CreatedOn)
-                .HasColumnName("created_on")
-                .HasColumnType("date")
-                .IsRequired();
+            builder.ApplyConfiguration(new TestConfiguration());
+            builder.ApplyConfiguration(new GithubRepoConfiguration());
         }
 
-        // some db set
+        public virtual DbSet<GithubRepo> GithubRepo { get; set; }
+
         public virtual DbSet<Test> Test { get; set; }
     }
 }

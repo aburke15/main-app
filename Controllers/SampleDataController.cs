@@ -5,16 +5,23 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AppData;
 using AppData.Models;
+using Websites.Services;
+using Websites.Services.Github;
+using AppData.Interfaces;
 
 namespace Websites.Controllers
 {
     [Route("api/[controller]")]
     public class SampleDataController : Controller
     {
-        private readonly WebsitesContext Context;
+        private readonly IGithubApiService GithubApi;
+        private readonly ITestRepository TestRepository;
 
-        public SampleDataController(WebsitesContext context) 
-            => Context = context;
+        public SampleDataController(IGithubApiService githubApi, ITestRepository testRepository) 
+        {
+            GithubApi = githubApi;
+            TestRepository = testRepository;
+        }
 
         private static string[] Summaries = new[]
         {
@@ -33,7 +40,18 @@ namespace Websites.Controllers
             });
         }
 
-        [HttpPost]
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetRepositories()
+        {
+            var githubRepositories = await GithubApi.GetRepositories();
+
+            if (!githubRepositories.Any())
+                return BadRequest();
+
+            return Ok(githubRepositories);
+        }
+
+        [HttpPost("[action]")]
         public IActionResult AddTest([FromBody]CreateTestRequest request)
         {
             var test = new Test
@@ -42,8 +60,8 @@ namespace Websites.Controllers
                 CreatedBy = request.CreatedBy
             };
 
-            Context.Test.Add(test);
-            Context.SaveChanges();
+            TestRepository.Add(test);
+            TestRepository.SaveChangesAsync();
 
             return Ok();
         }
