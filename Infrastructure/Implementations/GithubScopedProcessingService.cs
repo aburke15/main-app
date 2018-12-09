@@ -7,29 +7,21 @@ using Websites.Services.Github;
 internal class GithubScopedProcessingService : IGithubScopedProcessingService
 {
     private readonly IGithubApiService GithubApi;
-    private readonly IGithubRepoRepository GithubRepo;
+    private readonly IGithubRepoRepository GithubRepository;
 
     public GithubScopedProcessingService(
         IGithubApiService githubApi, 
-        IGithubRepoRepository githubRepo)
+        IGithubRepoRepository githubRepository)
     {
         GithubApi = githubApi;
-        GithubRepo = githubRepo;
+        GithubRepository = githubRepository;
     }
 
-    public async void DoWork()
+    public void DoWork()
     {
-        Console.WriteLine("Doing some scoped processing work");
+        GithubRepository.DropGithubRepoTable();
+        GithubRepository.CreateGithubRepoTable();
 
-        Console.WriteLine("Dropping Github Repo table.");
-        GithubRepo.DropGithubRepoTable();
-        Console.WriteLine("Github Repo dropped successfully.");
-
-        Console.WriteLine("Creating Github Repo table.");
-        GithubRepo.CreateGithubRepoTable();
-        Console.WriteLine("Github Repo created successfully.");
-
-        Console.WriteLine("Fetching repos from Github API");
         var repos = GithubApi.GetRepositories();
         
         var githubRepos = repos.Select(x => new GithubRepo 
@@ -42,9 +34,7 @@ internal class GithubScopedProcessingService : IGithubScopedProcessingService
             Name = x.Name
         });
 
-        Console.WriteLine("Inserting repos into GithubRepo table.");
-        GithubRepo.AddRange(githubRepos);
-        await GithubRepo.SaveChangesAsync();
-        Console.WriteLine("Records successfully inserted.");
+        GithubRepository.AddRange(githubRepos);
+        GithubRepository.SaveChanges();
     }
 }

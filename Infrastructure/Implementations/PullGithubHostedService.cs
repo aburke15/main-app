@@ -25,7 +25,7 @@ namespace Websites.Infrastructure
             Console.WriteLine("Github background service is starting with a timer!");
 
             _timer = new Timer(DoWork, null, TimeSpan.Zero,
-                TimeSpan.FromSeconds(40));
+                TimeSpan.FromDays(5));
 
             return Task.CompletedTask;
         }
@@ -34,21 +34,14 @@ namespace Websites.Infrastructure
         {
             using (var scope = Services.CreateScope())
             {
-                var githubScopedProcessingService = 
-                    scope.ServiceProvider
-                        .GetRequiredService<IGithubScopedProcessingService>();
+                var service = scope.ServiceProvider
+                    .GetRequiredService<IGithubScopedProcessingService>();
 
-                githubScopedProcessingService.DoWork();
+                service.DoWork();
             }
         }
 
-        public Task StopAsync(CancellationToken cancellationToken)
-        {
-            System.Console.WriteLine("Github background service is ending");
-
-            _timer?.Change(Timeout.Infinite, 0);
-
-            return Task.CompletedTask;
-        }
+        public Task StopAsync(CancellationToken cancellationToken) 
+            => Task.CompletedTask;
     }
 }

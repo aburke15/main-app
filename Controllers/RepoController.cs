@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Websites.Controllers
 {
-    [Route("api/repos")]
+    [Route("api/[controller]")]
     [Produces("application/json")]
     public class RepoController : Controller
     {
