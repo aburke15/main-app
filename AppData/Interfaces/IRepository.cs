@@ -13,7 +13,9 @@ namespace AppData.Interfaces
 
         Task AddRangeAsync(IEnumerable<T> entities);
 
-        IEnumerable<T> Get { get; }
+        IEnumerable<T> Get();
+
+        Task<IEnumerable<T>> GetAsync();
 
         T GetById(object key);
 

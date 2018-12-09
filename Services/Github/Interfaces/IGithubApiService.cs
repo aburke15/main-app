@@ -7,6 +7,6 @@ namespace Websites.Services.Github
 {
     public interface IGithubApiService
     {
-        Task<IEnumerable<GithubRepoDto>> GetRepositories();
+        IEnumerable<GithubRepoDto> GetRepositories();
     }
 }

@@ -24,22 +24,15 @@ namespace Websites.Services.Github
             Context = context;
         }
 
-        public async Task<IEnumerable<GithubRepoDto>> GetRepositories()
+        public IEnumerable<GithubRepoDto> GetRepositories()
         {
             var client = new RestClient(new Uri(
                 Configuration.GetValue<string>(GITHUB_API_REPOS)
             ));
 
-            var response = await client
-                .ExecuteGetTaskAsync<List<GithubRepoDto>>(new RestRequest());
+            var response = client.Get<List<GithubRepoDto>>(new RestRequest());
 
             return response.Data;
         }
-
-        // NEXT STEPS:
-        // 1 repo pattern or no repo pattern?: Yes
-        // 2. finish the background service, hangfire or no?: No, build in house task
-        // 3. Get the repository pattern in place
-        // 4. Figure out the rest of the logic for the background task
     }
 }

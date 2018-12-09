@@ -7,7 +7,7 @@ namespace AppData.Models
         public Entity() 
             => CreatedOn = DateTime.Now;
 
-        public int Id { get; }
+        public int Id { get; private set; }
 
         public DateTime CreatedOn { get; private set; }
     }

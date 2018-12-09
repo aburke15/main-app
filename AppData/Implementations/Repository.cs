@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AppData.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace AppData.Implementations
 {
@@ -24,8 +26,11 @@ namespace AppData.Implementations
         public async Task AddRangeAsync(IEnumerable<T> entities) 
             => await Context.Set<T>().AddRangeAsync(entities);
 
-        public IEnumerable<T> Get 
-            => Context.Set<T>() as IEnumerable<T>;
+        public IEnumerable<T> Get() 
+            => Context.Set<T>().ToList();
+
+        public async Task<IEnumerable<T>> GetAsync() 
+            => await Context.Set<T>().ToListAsync();
 
         public T GetById(object key)
         {
