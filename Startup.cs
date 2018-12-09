@@ -39,9 +39,13 @@ namespace Websites
                 options => options.UseMySQL(Configuration.GetConnectionString("CoffeeLakeConnection"))
             );
 
+            services.AddHostedService<PullGithubHostedService>();
+            services.AddScoped<IGithubScopedProcessingService, GithubScopedProcessingService>();
+
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<ITestRepository, TestRepository>();
-            //services.AddSingleton<IHostedService, PullGithubService>();
+            services.AddScoped<IGithubRepoRepository, GithubRepoRepository>();
+
             services.AddScoped<IGithubApiService, GithubApiService>();
         }
 

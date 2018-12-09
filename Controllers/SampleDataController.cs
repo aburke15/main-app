@@ -11,7 +11,7 @@ using AppData.Interfaces;
 
 namespace Websites.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/samples")]
     public class SampleDataController : Controller
     {
         private readonly IGithubApiService GithubApi;
@@ -41,9 +41,9 @@ namespace Websites.Controllers
         }
 
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetRepositories()
+        public IActionResult GetRepositories()
         {
-            var githubRepositories = await GithubApi.GetRepositories();
+            var githubRepositories = GithubApi.GetRepositories();
 
             if (!githubRepositories.Any())
                 return BadRequest();
