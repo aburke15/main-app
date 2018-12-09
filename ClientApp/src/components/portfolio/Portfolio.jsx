@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Portfolio.css';
+import './portfolio.css';
 import { Title } from './Title';
 import { Bio } from './Bio';
 import { Skill } from './Skill';
