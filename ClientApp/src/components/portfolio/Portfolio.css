@@ -115,7 +115,10 @@
 /* *********** PROJECTS ************* */
 .projects-section {
     /* height: auto; */
-    height: 400px;
+    height: auto;
+}
+.projects-margin {
+    margin-bottom: 20px;
 }
 /* ********************************** */
 

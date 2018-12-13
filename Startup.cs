@@ -10,8 +10,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Websites.Infrastructure;
 using Websites.Services.Github;
+using Websites.Services.Infrastructure;
+using Websites.Services.System;
 
 namespace Websites
 {
@@ -27,6 +28,7 @@ namespace Websites
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMemoryCache();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             // In production, the React files will be served from this directory
@@ -40,13 +42,14 @@ namespace Websites
             );
 
             services.AddHostedService<PullGithubHostedService>();
-            services.AddScoped<IGithubScopedProcessingService, GithubScopedProcessingService>();
-
+            
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<ITestRepository, TestRepository>();
             services.AddScoped<IGithubRepoRepository, GithubRepoRepository>();
 
+            services.AddScoped<IGithubScopedProcessingService, GithubScopedProcessingService>();
             services.AddScoped<IGithubApiService, GithubApiService>();
+            services.AddScoped(typeof(ICachingService<>), typeof(CachingService<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

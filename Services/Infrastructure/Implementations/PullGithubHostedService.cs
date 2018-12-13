@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Websites.Services.Github;
 
-namespace Websites.Infrastructure
+namespace Websites.Services.Infrastructure
 {
     internal class PullGithubHostedService :  IHostedService, IDisposable
     {
