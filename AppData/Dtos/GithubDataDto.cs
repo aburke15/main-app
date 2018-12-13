@@ -1,11 +1,12 @@
 using System;
 
-namespace AppData.Models
+namespace AppData.Dtos
 {
-    public class GithubRepo : Entity
+    public class GithubDataDto
     {
-        public GithubRepo()
-        { }
+        public int Id { get; set; }
+
+        public DateTime CreatedOn { get; set; }
 
         public string CreatedAt { get; set; }
 

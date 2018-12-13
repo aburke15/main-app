@@ -21,7 +21,7 @@ namespace AppData.ModelConfigurations
             
             builder.Property(x => x.CreatedAt)
                 .HasColumnName("created_at")
-                .HasColumnType("timestamp")
+                .HasMaxLength(50)
                 .IsRequired();
             
             builder.Property(x => x.Description)

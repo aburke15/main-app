@@ -14,15 +14,10 @@ namespace Websites.Services.Github
     public class GithubApiService : IGithubApiService
     {
         private const string GITHUB_API_REPOS = "GithubApiUrl";
-
         private readonly IConfiguration Configuration;
-        private readonly WebsitesContext Context;
 
-        public GithubApiService(WebsitesContext context, IConfiguration configuration)
-        {
-            Configuration = configuration;
-            Context = context;
-        }
+        public GithubApiService(IConfiguration configuration) 
+            => Configuration = configuration;
 
         public IEnumerable<GithubRepoDto> GetRepositories()
         {

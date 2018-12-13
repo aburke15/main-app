@@ -10,7 +10,7 @@ namespace AppData.Implementations
             CREATE TABLE IF NOT EXISTS GithubRepo (
             ID int NOT NULL AUTO_INCREMENT,
             created_on timestamp NOT NULL,
-            created_at timestamp NOT NULL,
+            created_at varchar(100) NOT NULL,
             description varchar(500) NULL,
             forks int NULL,
             html_url varchar(200) NOT NULL,
