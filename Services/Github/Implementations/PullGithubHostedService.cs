@@ -4,9 +4,8 @@ using System.Threading.Tasks;
 using AppData.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Websites.Services.Github;
 
-namespace Websites.Services.Infrastructure
+namespace Websites.Services.Github
 {
     internal class PullGithubHostedService :  IHostedService, IDisposable
     {
@@ -22,8 +21,6 @@ namespace Websites.Services.Infrastructure
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            Console.WriteLine("Github background service is starting with a timer!");
-
             _timer = new Timer(DoWork, null, TimeSpan.Zero,
                 TimeSpan.FromDays(5));
 
@@ -37,7 +34,7 @@ namespace Websites.Services.Infrastructure
                 var service = scope.ServiceProvider
                     .GetRequiredService<IGithubScopedProcessingService>();
 
-                service.DoWork();
+                service.Process();
             }
         }
 

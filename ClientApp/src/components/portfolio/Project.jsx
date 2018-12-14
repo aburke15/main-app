@@ -35,7 +35,7 @@ export class Project extends Component {
         if (error) {
             return <div>Error: {error.message}</div>;
         } else if (!isLoaded) {
-            return <div>Loading...</div>;
+            return <div className="text-center">Loading...</div>;
         } else {
             const secondColumnStart = Math.floor(repos.length / 2);
             return (

@@ -2,9 +2,8 @@ using System;
 using System.Linq;
 using AppData.Interfaces;
 using AppData.Models;
-using Websites.Services.Github;
 
-namespace Websites.Services.Infrastructure
+namespace Websites.Services.Github
 {
     internal class GithubScopedProcessingService : IGithubScopedProcessingService
     {
@@ -19,7 +18,7 @@ namespace Websites.Services.Infrastructure
             GithubRepository = githubRepository;
         }
 
-        public void DoWork()
+        public void Process()
         {
             GithubRepository.DropGithubRepoTable();
             GithubRepository.CreateGithubRepoTable();

@@ -1,7 +1,7 @@
-namespace Websites.Services.Infrastructure
+namespace Websites.Services.Github
 {
     internal interface IGithubScopedProcessingService
     {
-        void DoWork();
+        void Process();
     }
 }
