@@ -11,7 +11,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Websites.Services.Github;
-using Websites.Services.Infrastructure;
 using Websites.Services.System;
 
 namespace Websites
@@ -49,7 +48,7 @@ namespace Websites
 
             services.AddScoped<IGithubScopedProcessingService, GithubScopedProcessingService>();
             services.AddScoped<IGithubApiService, GithubApiService>();
-            services.AddScoped(typeof(ICachingService<>), typeof(CachingService<>));
+            // services.AddScoped(typeof(ICachingService<>), typeof(CachingService<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

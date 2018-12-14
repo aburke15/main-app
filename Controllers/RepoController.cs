@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AppData.Dtos;
@@ -19,8 +21,8 @@ namespace Websites.Controllers
         private readonly IGithubRepoRepository GithubRepo;
 
         public RepoController(
-            IGithubRepoRepository githubRepo, 
-            IMemoryCache cache)
+            IMemoryCache cache,
+            IGithubRepoRepository githubRepo)
         {
             Cache = cache;
             GithubRepo = githubRepo;
@@ -29,9 +31,10 @@ namespace Websites.Controllers
         [HttpGet]
         public async Task<IActionResult> GetProjects()
         {
-
-            var githubRepos = await GithubRepo.GetAsync();
-            var repos = githubRepos
+            if (Cache.TryGetValue(REPO_KEY, out IEnumerable<GithubDataDto> projects))
+                return Ok(projects);
+            
+            var repos = (await GithubRepo.GetAsync())
                 .Select(x => new GithubDataDto
                 {
                     Id = x.Id,
@@ -44,6 +47,8 @@ namespace Websites.Controllers
                     Name = x.Name
                 })
                 .OrderBy(x => x.CreatedOn);
+
+            Cache.Set(REPO_KEY, repos, TimeSpan.FromDays(5));
 
             return Ok(repos);
         }
@@ -58,6 +63,7 @@ namespace Websites.Controllers
                 CreatedOn = githubRepo.CreatedOn,
                 CreatedAt = githubRepo.CreatedAt,
                 Description = githubRepo.Description,
+                Forks = githubRepo.Forks,
                 HtmlUrl = githubRepo.HtmlUrl,
                 Language = githubRepo.Language,
                 Name = githubRepo.Name
