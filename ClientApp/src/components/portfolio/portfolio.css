@@ -1,0 +1,157 @@
+@font-face {
+    font-family: Cinzel-Regular;
+    src: url(../fonts/Cinzel-Regular.otf);
+}
+
+.portfolio-font {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+}
+
+.parallax { 
+    /* The image used */
+    background-image: url("../img/portfolio/main_image.jpg");
+
+    /* Set a specific height */
+    height: 900px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.global-padding {
+    padding: 50px 0px 50px 0px;
+}
+.global-margin {
+    margin-top: 100px;
+}
+
+.b-underline {
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+    padding-bottom: 10px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.w-underline {
+    box-sizing: border-box;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    width: 100px;
+}
+
+/* ****** NAVBAR ********* */
+.navbar {
+    border: 1px solid white;
+}
+.navbar-brand {
+    font-size: 26px;
+}
+/* *********************** */
+
+/* ********* TITLE ********* */
+.title-section {
+    padding-top: 250px;
+}
+.title {
+    font-size: 74px;
+    font-weight: 600;
+}
+.sub-title {
+    font-size: 44px;
+    font-weight: 600;
+}
+.title-color-font {
+    color: white;
+    font-family: Cinzel-Regular;
+}
+/* ************************* */
+
+/* ********** BIO ********** */
+.bio-section {
+    height: auto;
+    background-color: lightgrey;
+}
+.bio-pic {
+    border-radius: 50%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-bottom: 50px;
+}
+.bio-padding {
+    padding: 0px 50px 0px 50px
+}
+/* ************************** */
+
+/* ********** SKILLS *********** */
+.skills-section {
+    height: auto;
+}
+.skill-icon {
+    display: block;
+    margin: 100px auto 0px auto;
+    height: 150px;
+    width: auto;
+    text-align: center;
+    opacity: .85;
+}
+/* ***************************** */
+
+/* ************ RESUME ************* */
+.resume-section {
+    height: auto;
+    background-color: lightgrey;
+}
+/* ********************************* */
+
+/* *********** PROJECTS ************* */
+.projects-section {
+    /* height: auto; */
+    height: auto;
+}
+.projects-margin {
+    margin-bottom: 20px;
+}
+/* ********************************** */
+
+/* ************* CONTACT ************ */
+.contact-section {
+    /* height: auto; */
+    height: 300px;
+    background-color: grey;
+}
+.contact-top-row {
+    margin-top: 15px;
+}
+.contact-email {
+    color: white;
+}
+.contact-phone {
+    color: white;
+}
+.contact-email:hover,
+.contact-email:active,
+.contact-email:focus {
+    text-decoration: none;
+    color: black;
+}
+.contact-icon {
+    height: 50px;
+    width: auto;
+}
+.contact-icon-space {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.contact-margin {
+    margin-bottom: 40px;
+}
+/* ********************************** */
