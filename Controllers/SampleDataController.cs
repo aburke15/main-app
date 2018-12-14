@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using AppData;
 using AppData.Models;
-using Websites.Services;
 using Websites.Services.Github;
 using AppData.Interfaces;
 

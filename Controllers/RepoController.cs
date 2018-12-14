@@ -4,10 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using AppData.Dtos;
 using AppData.Interfaces;
-using AppData.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
-using Websites.Services.System;
 
 namespace Websites.Controllers
 {
