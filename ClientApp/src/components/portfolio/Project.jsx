@@ -48,7 +48,7 @@ export class Project extends Component {
                         <Row className="global-margin">
                             <Col md={6}>
                                 {repos.slice(0, secondColumnStart).map(repo => (
-                                    <Jumbotron key={repo.Id}>
+                                    <Jumbotron key={repo.name}>
                                         <h3>{repo.name.toUpperCase()}</h3>
                                         <hr />
                                         <ListGroup>
@@ -63,7 +63,7 @@ export class Project extends Component {
                             </Col>
                             <Col md={6}>
                                 {repos.slice(secondColumnStart).map(repo => (
-                                    <Jumbotron key={repo.Id}>
+                                    <Jumbotron key={repo.name}>
                                         <h3>{repo.name.toUpperCase()}</h3>
                                         <hr />
                                         <ListGroup>
