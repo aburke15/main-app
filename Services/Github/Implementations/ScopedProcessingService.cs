@@ -26,12 +26,12 @@ namespace Websites.Services.Github
             var repos = (GithubApi.GetRepositories())
                 .Select(x => new
                 {
-                    CreatedAt = x.CreatedAt,
-                    Description = x.Description,
-                    Forks = x.Forks,
-                    HtmlUrl = x.HtmlUrl,
-                    Language = x.Language,
-                    Name = x.Name
+                    x.CreatedAt,
+                    x.Description,
+                    x.Forks,
+                    x.HtmlUrl,
+                    x.Language,
+                    x.Name
                 })
                 .OrderByDescending(x => x.CreatedAt);
 
