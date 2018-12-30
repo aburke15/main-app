@@ -1,4 +1,4 @@
-namespace Websites.Services.Github
+namespace Websites.Services.Github.Interfaces
 {
     internal interface IScopedProcessingService
     {

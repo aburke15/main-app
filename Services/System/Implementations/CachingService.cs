@@ -1,7 +1,8 @@
 using System;
 using Microsoft.Extensions.Caching.Memory;
+using Websites.Services.System.Interfaces;
 
-namespace Websites.Services.System
+namespace Websites.Services.System.Implementations
 {
     public class CachingService<T> : ICachingService<T> where T : class
     {

@@ -1,7 +1,7 @@
-using AppData.Interfaces;
-using AppData.Models;
+using Websites.AppData.Interfaces;
+using Websites.AppData.Models;
 
-namespace AppData.Implementations
+namespace Websites.AppData.Implementations
 {
     public class TestRepository : Repository<Test>, ITestRepository
     {

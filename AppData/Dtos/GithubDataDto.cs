@@ -1,6 +1,6 @@
 using System;
 
-namespace AppData.Dtos
+namespace Websites.AppData.Dtos
 {
     public class GithubDataDto
     {

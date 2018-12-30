@@ -1,9 +1,7 @@
-
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using AppData.Dtos;
+using Websites.AppData.Dtos;
 
-namespace Websites.Services.Github
+namespace Websites.Services.Github.Interfaces
 {
     public interface IGithubApiService
     {

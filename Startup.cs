@@ -1,6 +1,3 @@
-using AppData;
-using AppData.Implementations;
-using AppData.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -8,7 +5,11 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Websites.Services.Github;
+using Websites.AppData;
+using Websites.AppData.Implementations;
+using Websites.AppData.Interfaces;
+using Websites.Services.Github.Implementations;
+using Websites.Services.Github.Interfaces;
 
 namespace Websites
 {

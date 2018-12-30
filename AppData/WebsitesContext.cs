@@ -1,8 +1,8 @@
-using AppData.ModelConfigurations;
-using AppData.Models;
 using Microsoft.EntityFrameworkCore;
+using Websites.AppData.ModelConfigurations;
+using Websites.AppData.Models;
 
-namespace AppData
+namespace Websites.AppData
 {
     public class WebsitesContext : DbContext
     {

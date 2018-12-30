@@ -1,4 +1,4 @@
-namespace Websites.Services.System
+namespace Websites.Services.System.Interfaces
 {
     public interface ICachingService<T> where T : class
     {

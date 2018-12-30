@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
-using AppData.Models;
+using Websites.AppData.Interfaces;
+using Websites.AppData.Models;
 using Websites.Services.Github;
-using AppData.Interfaces;
+using Websites.Services.Github.Interfaces;
 
 namespace Websites.Controllers
 {

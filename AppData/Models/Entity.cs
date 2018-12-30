@@ -1,6 +1,6 @@
 using System;
 
-namespace AppData.Models
+namespace Websites.AppData.Models
 {
     public abstract class Entity
     {

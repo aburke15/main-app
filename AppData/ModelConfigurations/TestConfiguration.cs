@@ -1,8 +1,8 @@
-using AppData.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Websites.AppData.Models;
 
-namespace AppData.ModelConfigurations
+namespace Websites.AppData.ModelConfigurations
 {
     public class TestConfiguration : IEntityTypeConfiguration<Test>
     {

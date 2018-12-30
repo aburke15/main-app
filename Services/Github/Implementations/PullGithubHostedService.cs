@@ -1,11 +1,11 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using AppData.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Websites.Services.Github.Interfaces;
 
-namespace Websites.Services.Github
+namespace Websites.Services.Github.Implementations
 {
     internal class PullGithubHostedService :  IHostedService, IDisposable
     {

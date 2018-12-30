@@ -1,6 +1,4 @@
-using System;
-
-namespace AppData.Models
+namespace Websites.AppData.Models
 {
     public class Test : Entity
     {

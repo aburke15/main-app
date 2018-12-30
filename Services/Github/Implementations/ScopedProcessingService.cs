@@ -1,9 +1,9 @@
-using System;
 using System.Linq;
-using AppData.Interfaces;
-using AppData.Models;
+using Websites.AppData.Interfaces;
+using Websites.AppData.Models;
+using Websites.Services.Github.Interfaces;
 
-namespace Websites.Services.Github
+namespace Websites.Services.Github.Implementations
 {
     internal class ScopedProcessingService : IScopedProcessingService
     {

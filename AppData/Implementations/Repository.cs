@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AppData.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Websites.AppData.Interfaces;
 
-namespace AppData.Implementations
+namespace Websites.AppData.Implementations
 {
     public class Repository<T> : IRepository<T> where T : class
     {

@@ -1,8 +1,8 @@
-using AppData.Interfaces;
-using AppData.Models;
 using Microsoft.EntityFrameworkCore;
+using Websites.AppData.Interfaces;
+using Websites.AppData.Models;
 
-namespace AppData.Implementations
+namespace Websites.AppData.Implementations
 {
     public class GithubRepoRepository : Repository<GithubRepo>, IGithubRepoRepository
     {

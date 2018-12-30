@@ -1,7 +1,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace AppData.Dtos
+namespace Websites.AppData.Dtos
 {
     public class GithubRepoDto
     {

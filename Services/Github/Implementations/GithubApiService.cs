@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
-using AppData.Dtos;
 using Microsoft.Extensions.Configuration;
 using RestSharp;
+using Websites.AppData.Dtos;
+using Websites.Services.Github.Interfaces;
 
-namespace Websites.Services.Github
+namespace Websites.Services.Github.Implementations
 {
     public class GithubApiService : IGithubApiService
     {
