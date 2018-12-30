@@ -11,7 +11,7 @@ namespace AppData.Implementations
     {
         private readonly WebsitesContext Context;
 
-        public Repository(WebsitesContext context) 
+        protected Repository(WebsitesContext context) 
             => Context = context;
 
         public void Add(T entity) 
@@ -64,8 +64,11 @@ namespace AppData.Implementations
         public async Task SaveChangesAsync() 
             => await Context.SaveChangesAsync();
 
-        private void ValidateKeyOfTypeInt(object key)
+        private static void ValidateKeyOfTypeInt(object key)
         {
+            if (key == null) 
+                throw new ArgumentNullException(nameof(key));
+            
             if (key.GetType() != typeof(int))
                 throw new InvalidOperationException($"Key ID must be of type {typeof(int)}");
         }

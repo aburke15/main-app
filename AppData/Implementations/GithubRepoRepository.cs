@@ -6,7 +6,7 @@ namespace AppData.Implementations
 {
     public class GithubRepoRepository : Repository<GithubRepo>, IGithubRepoRepository
     {
-        private const string CREATE_TABLE = @"
+        private const string CreateTable = @"
             CREATE TABLE IF NOT EXISTS GithubRepo (
             ID int NOT NULL AUTO_INCREMENT,
             created_on timestamp NOT NULL,
@@ -17,7 +17,7 @@ namespace AppData.Implementations
             language varchar(25) NULL,
             name varchar(50) NOT NULL,
             PRIMARY KEY(ID));";
-        private const string DROP_TABLE = "DROP TABLE IF EXISTS GithubRepo;";
+        private const string DropTable = "DROP TABLE IF EXISTS GithubRepo;";
 
         private readonly WebsitesContext Context;
 
@@ -25,9 +25,9 @@ namespace AppData.Implementations
             : base(context) => Context = context;
 
         public void DropGithubRepoTable()
-            => Context.Database.ExecuteSqlCommand(DROP_TABLE);
+            => Context.Database.ExecuteSqlCommand(DropTable);
 
         public void CreateGithubRepoTable()
-            => Context.Database.ExecuteSqlCommand(CREATE_TABLE);
+            => Context.Database.ExecuteSqlCommand(CreateTable);
     }
 }
