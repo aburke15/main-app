@@ -13,7 +13,7 @@ namespace Websites.Controllers
     [Produces("application/json")]
     public class RepoController : Controller
     {
-        private const string REPO_KEY = "Github Repos";
+        private const string RepoKey = "Github Repos";
 
         private readonly IMemoryCache Cache;
         private readonly IGithubRepoRepository GithubRepo;
@@ -29,7 +29,7 @@ namespace Websites.Controllers
         [HttpGet]
         public async Task<IActionResult> GetProjects()
         {
-            if (Cache.TryGetValue(REPO_KEY, out IEnumerable<GithubDataDto> projects))
+            if (Cache.TryGetValue(RepoKey, out IEnumerable<GithubDataDto> projects))
                 return Ok(projects);
             
             var repos = (await GithubRepo.GetAsync())
@@ -46,28 +46,9 @@ namespace Websites.Controllers
                 })
                 .OrderBy(x => x.CreatedOn);
 
-            Cache.Set(REPO_KEY, repos, TimeSpan.FromDays(5));
+            Cache.Set(RepoKey, repos, TimeSpan.FromDays(5));
 
             return Ok(repos);
-        }
-
-        [HttpGet("{id:int}")]
-        public async Task<IActionResult> GetProject(int id)
-        {
-            var githubRepo = await GithubRepo.GetByIdAsync(id);
-            var repo = new GithubDataDto
-            {
-                Id = githubRepo.Id,
-                CreatedOn = githubRepo.CreatedOn,
-                CreatedAt = githubRepo.CreatedAt,
-                Description = githubRepo.Description,
-                Forks = githubRepo.Forks,
-                HtmlUrl = githubRepo.HtmlUrl,
-                Language = githubRepo.Language,
-                Name = githubRepo.Name
-            };
-
-            return Ok(repo);
         }
     }
 }

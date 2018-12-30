@@ -236,3 +236,5 @@ _Pvt_Extensions
 .DS_Store
 
 appsettings.json
+
+.idea/

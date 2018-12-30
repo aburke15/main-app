@@ -9,7 +9,7 @@ namespace Websites.Services.Github
 {
     internal class PullGithubHostedService :  IHostedService, IDisposable
     {
-        private Timer _timer;
+        private Timer Timer;
 
         public PullGithubHostedService(IServiceProvider services) 
             => Services = services;
@@ -17,11 +17,11 @@ namespace Websites.Services.Github
         IServiceProvider Services { get; }
 
         public void Dispose() 
-            => _timer?.Dispose();
+            => Timer?.Dispose();
 
         public Task StartAsync(CancellationToken cancellationToken)
         {
-            _timer = new Timer(DoWork, null, TimeSpan.Zero,
+            Timer = new Timer(DoWork, null, TimeSpan.Zero,
                 TimeSpan.FromDays(5));
 
             return Task.CompletedTask;
@@ -32,7 +32,7 @@ namespace Websites.Services.Github
             using (var scope = Services.CreateScope())
             {
                 var service = scope.ServiceProvider
-                    .GetRequiredService<IGithubScopedProcessingService>();
+                    .GetRequiredService<IScopedProcessingService>();
 
                 service.Process();
             }

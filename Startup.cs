@@ -3,15 +3,12 @@ using AppData.Implementations;
 using AppData.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Websites.Services.Github;
-using Websites.Services.System;
 
 namespace Websites
 {
@@ -46,13 +43,13 @@ namespace Websites
             services.AddScoped<ITestRepository, TestRepository>();
             services.AddScoped<IGithubRepoRepository, GithubRepoRepository>();
 
-            services.AddScoped<IGithubScopedProcessingService, GithubScopedProcessingService>();
+            services.AddScoped<IScopedProcessingService, ScopedProcessingService>();
             services.AddScoped<IGithubApiService, GithubApiService>();
             // services.AddScoped(typeof(ICachingService<>), typeof(CachingService<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {

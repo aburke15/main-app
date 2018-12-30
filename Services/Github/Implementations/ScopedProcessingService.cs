@@ -5,12 +5,12 @@ using AppData.Models;
 
 namespace Websites.Services.Github
 {
-    internal class GithubScopedProcessingService : IGithubScopedProcessingService
+    internal class ScopedProcessingService : IScopedProcessingService
     {
         private readonly IGithubApiService GithubApi;
         private readonly IGithubRepoRepository GithubRepository;
 
-        public GithubScopedProcessingService(
+        public ScopedProcessingService(
             IGithubApiService githubApi,
             IGithubRepoRepository githubRepository)
         {

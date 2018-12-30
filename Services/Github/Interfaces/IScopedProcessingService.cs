@@ -1,6 +1,6 @@
 namespace Websites.Services.Github
 {
-    internal interface IGithubScopedProcessingService
+    internal interface IScopedProcessingService
     {
         void Process();
     }
