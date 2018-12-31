@@ -19,7 +19,7 @@ namespace Websites
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseUrls("https://*:5500")
+                .UseUrls("http://*:5500")
                 .UseStartup<Startup>();
     }
 }

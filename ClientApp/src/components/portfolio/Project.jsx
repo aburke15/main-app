@@ -12,7 +12,7 @@ export class Project extends Component {
     }
 
     componentDidMount() {
-        fetch('https://localhost:5500/api/repo')
+        fetch('http://www.aburke.io/api/repo')
             .then(res => res.json())
             .then(
                 (repos) => {
