@@ -12,7 +12,7 @@ export class Project extends Component {
     }
 
     componentDidMount() {
-        fetch('https://localhost:5501/api/repo')
+        fetch('https://localhost:5500/api/repo')
             .then(res => res.json())
             .then(
                 (repos) => {
