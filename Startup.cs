@@ -38,7 +38,7 @@ namespace Websites
                 options => options.UseMySQL(Configuration.GetConnectionString("CoffeeLakeConnection"))
             );
 
-            services.AddHostedService<PullGithubHostedService>();
+            services.AddHostedService<GithubHostedService>();
             
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<ITestRepository, TestRepository>();
@@ -46,7 +46,6 @@ namespace Websites
 
             services.AddScoped<IScopedProcessingService, ScopedProcessingService>();
             services.AddScoped<IGithubApiService, GithubApiService>();
-            // services.AddScoped(typeof(ICachingService<>), typeof(CachingService<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

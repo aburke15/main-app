@@ -7,11 +7,11 @@ using Websites.Services.Github.Interfaces;
 
 namespace Websites.Services.Github.Implementations
 {
-    internal class PullGithubHostedService :  IHostedService, IDisposable
+    internal class GithubHostedService :  IHostedService, IDisposable
     {
         private Timer Timer;
 
-        public PullGithubHostedService(IServiceProvider services) 
+        public GithubHostedService(IServiceProvider services) 
             => Services = services;
 
         IServiceProvider Services { get; }

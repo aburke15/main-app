@@ -19,6 +19,7 @@ namespace Websites
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+//                .UseKestrel()
                 .UseUrls("https://*:5501")
                 .UseStartup<Startup>();
     }
